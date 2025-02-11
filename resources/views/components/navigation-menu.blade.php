@@ -14,6 +14,19 @@
             <x-nav-link :active="request()->routeIs('posts*')" href="/posts">Posts</x-nav-link>
         
         </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          @auth
+           <form action="{{ route('logout') }}" method="post">
+            @csrf
+            @method("POST")
+            <button type="submit" class="btn btn-primary">Logout</button>
+           </form>
+            @else
+                
+            <x-nav-link  href="/login">Login</x-nav-link>
+            @endauth
+        </ul>
       </div>
     </div>
   </nav>
