@@ -8,9 +8,7 @@ use Livewire\Form;
 
 class PostForm extends Form
 {
-    #[Rule(['required'])]
-    public string $title = '';
-
+    
     #[Rule(['required'])]
     public string $body = '';
 
@@ -18,10 +16,12 @@ class PostForm extends Form
     {
         $validate = $this->validate();
 
-        Auth::user()->posts()->create($validate);
+        $post = Auth::user()->posts()->create($validate);
 
         flash('Post created successfully', 'success');
 
         $this->reset();
+
+        return $post;
     }
 }

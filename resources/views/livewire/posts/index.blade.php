@@ -1,9 +1,6 @@
+<div>
 
-
-<div class="row">
-
-    <div class="col-md-6">
-        <livewire:posts.create />
-    </div>
-
+    @foreach ( $posts as $post )
+    <livewire:posts.block :post="$post" wire:key="{{ $post->id }}"/>
+    @endforeach
 </div>

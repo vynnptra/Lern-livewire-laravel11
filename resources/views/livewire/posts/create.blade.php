@@ -2,32 +2,18 @@
 
     <x-flash-message/>
 
-    <div class="card">
-        <div class="card-body">
+
             
-            
-                <h5 class="card-title">New Post</h5>
                
                 <form action="" wire:submit="save">
     
-                    <div class="mb-4">
+                  
+                    <div class="mb-2">
     
-                        <label for="title" class="form-label" >Title</label>
+
+                        <label for="body" class="visually-hidden" >Body</label>
     
-                        <input type="text" wire:model="form.title" class="form-control" id="title" rows="3" ></input>
-    
-                        <div class="text-danger">
-                            @error('form.title')
-                               <small class="d-block mt-1 text-danger">{{ $message }}</small> 
-                            @enderror
-                        </div>
-    
-                    </div>
-                    <div class="mb-4">
-    
-                        <label for="body" class="form-label" >Body</label>
-    
-                        <textarea wire:model="form.body" class="form-control" id="body" rows="3" ></textarea>
+                        <textarea wire:model="form.body" placeholder="wahts in your mind?" class="form-control" id="body"></textarea>
     
                         <div class="text-danger">
                             @error('form.body')
@@ -36,13 +22,9 @@
                         </div>
     
                     </div>
-    
-                    <button class="btn btn-primary">Save</button>
+                    <div class="flex justify-content-end">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
                 </form>
-    
-           
-    
-        </div>
-    </div>
-    
+
 </div>

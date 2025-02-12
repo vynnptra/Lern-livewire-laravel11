@@ -18,7 +18,7 @@ return new class extends Migration
                 ->constrained('users')
                 ->onDelete('cascade');
 
-            $table->string('title');
+            $table->string('title')->default('title');
 
             $table->text('body');
 
